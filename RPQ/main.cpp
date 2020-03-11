@@ -23,6 +23,7 @@ int main()
     wczytaj(&n2, wsktab2, DATA_2);
     wczytaj(&n3, wsktab3, DATA_3);
     wczytaj(&n4, wsktab4, DATA_4);
+    RPQ_Sort(n1, wsktab1);
     wypisz(&n1, wsktab1);
 }
 

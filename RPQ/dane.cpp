@@ -24,4 +24,5 @@ void wypisz(int *n,RPQ* tab)
 	{
 		std::cout << (*(tab + i)).R << " " << (tab + i)->P << " " << (tab + i)->Q << "\n";
 	}
+	std::cout << "Wynik końcowy:" << koniec(*n, tab);
 }

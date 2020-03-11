@@ -1,0 +1,6 @@
+﻿  dane.cpp
+D:\Studia\6_SEMESTR\SPD\Lab\RPQ\dane.cpp(27,15): warning C4566: character represented by universal-character-name '\u0144' cannot be represented in the current code page (1252)
+  klasa.cpp
+  main.cpp
+  Generating Code...
+  RPQ.vcxproj -> D:\Studia\6_SEMESTR\SPD\Lab\Debug\RPQ.exe

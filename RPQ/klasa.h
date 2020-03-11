@@ -22,7 +22,7 @@ struct RPQ
 	}
 };
 
-int koniec(int n, RPQ kolejnosc[]);
+int koniec(int n, RPQ* kolejnosc);
 void RPQ_BubbleSort(int n, RPQ* arr, char choice);
 void RPQ_Sort(int n, RPQ* tab);
 void RPQswap(RPQ* el1, RPQ* el2);
