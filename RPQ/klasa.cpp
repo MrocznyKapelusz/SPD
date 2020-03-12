@@ -40,7 +40,7 @@ void RPQ_BubbleSort(int n, RPQ* arr,char choice)//choice - po jakim kryterium so
 		for (int i = 0; i < n - 1; i++)
 		{
 			// Last i elements are already in place  
-			for (int j = 0; j < n - i - 1; j++)
+			for (int j = 0; j < n - 1; j++)
 			{
 				if ((arr+j)->R > (arr+j + 1)->R)
 					RPQswap(&arr[j], &arr[j + 1]);
@@ -53,7 +53,7 @@ void RPQ_BubbleSort(int n, RPQ* arr,char choice)//choice - po jakim kryterium so
 		for (int i = stosunek(n,arr); i < n - 1; i++)
 		{
 			// Last i elements are already in place  
-			for (int j = stosunek(n,arr); j < n - i - 1; j++)
+			for (int j = stosunek(n,arr); j < n - 1; j++)
 			{
 				if ((arr + j)->Q < (arr + j + 1)->Q)
 					RPQswap(&arr[j], &arr[j + 1]);
@@ -69,19 +69,15 @@ gdzie zaczynamy sortować po Q
 */
 int stosunek(int n, RPQ* tab) 
 {
-	int* sum_R = new int;
-	int* sum_Q = new int;
-	*sum_R = 0;
-	*sum_Q = 0;
+	int sum_R = 0;
+	int sum_Q = 0;
 	for (int i = 0; i < n; i++)
 	{
-		*sum_R += (tab + i)->R;
-		*sum_Q += (tab + i)->Q;
+		sum_R += (tab + i)->R;
+		sum_Q += (tab + i)->Q;
 	}
-	int zwr= (*sum_R) / (*sum_Q) * n;
-	delete sum_R;
-	delete sum_Q;
-	return zwr;
+	double zwr = double(sum_R) / double(sum_Q)* n/2;
+	return (int)zwr;
 }
 
 void RPQ_Sort(int n, RPQ* tab)
