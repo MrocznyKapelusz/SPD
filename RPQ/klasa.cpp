@@ -9,7 +9,7 @@ int koniec(int n, RPQ* kolejnosc) //obliczanie wyniku końcowego
 	*c = 0;
 	for(int i = 0; i < n; ++i)
 	{
-		*a = std::max((kolejnosc+i)->R + (kolejnosc + i)->P, *a);
+		*a = std::max((kolejnosc + i)->R, * a) + (kolejnosc + i)->P;
 		*c = std::max(*c, *a + (kolejnosc + i)->Q);
 	}
 	int koniec = *c;
