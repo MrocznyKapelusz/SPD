@@ -20,9 +20,10 @@ void wczytaj(int* n,RPQ* tab, std::string wybor) //do n zapisujemy liczbę danyc
 
 void wypisz(int *n,RPQ* tab)
 {
+	std::cout << "\n";
 	for (int i = 0; i < *n; i++)
 	{
 		std::cout << (*(tab + i)).R << " " << (tab + i)->P << " " << (tab + i)->Q << "\n";
 	}
-	std::cout << "Wynik końcowy:" << koniec(*n, tab);
+	std::cout << "Wynik końcowy:" << koniec(*n, tab)<<"\n";
 }

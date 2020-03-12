@@ -24,7 +24,13 @@ int main()
     wczytaj(&n3, wsktab3, DATA_3);
     wczytaj(&n4, wsktab4, DATA_4);
     RPQ_Sort(n1, wsktab1);
+    RPQ_Sort(n2, wsktab2);
+    RPQ_Sort(n3, wsktab3);
+    RPQ_Sort(n4, wsktab4);
     wypisz(&n1, wsktab1);
+    wypisz(&n2, wsktab2);
+    wypisz(&n3, wsktab3);
+    wypisz(&n4, wsktab4);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
