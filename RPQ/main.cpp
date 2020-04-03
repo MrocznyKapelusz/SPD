@@ -8,7 +8,6 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
     int n1, n2, n3, n4;
     RPQ tab1[64];  
     RPQ tab2[64];  
