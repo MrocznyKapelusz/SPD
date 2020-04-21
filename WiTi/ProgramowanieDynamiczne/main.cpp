@@ -10,8 +10,9 @@
 #include <limits>
 #include <algorithm>
 #include <ctime>
+#include"PrzegladZupelny.h"
 
-int Solve(int* pi, int* wi, int* di,int iloscDanych)
+int SolvePD(int* pi, int* wi, int* di,int iloscDanych)
 {
     // 2^n podzbiorow zbioru n elementowego
     int iloscPodzbiorow = static_cast<int>(pow(2.0, static_cast<double>(iloscDanych)));
@@ -90,13 +91,20 @@ int main() {
         }
 
         
-        int rozw = Solve(Pi, Wi, Di, iloscDanych);
+        int rozw = SolvePD(Pi, Wi, Di, iloscDanych);
 
         koniec = clock();
         double czasDzialania = double(koniec - poczatek) / (CLOCKS_PER_SEC / 1000);
         std::cout << "data." << dataIndex
             << "      Rozwiązanie optymalne: " << rozw
             << "      Czas działania algorytmu: " << czasDzialania << " mili-sec.\n";
+
+
+        poczatek = clock();
+        SolvePZ(Pi, Wi, Di);
+        koniec = clock();
+        czasDzialania = double(koniec - poczatek) / (CLOCKS_PER_SEC / 1000);
+        std::cout << "Czas działania:" << czasDzialania << "milli-sec"<<"\n";
         //Podzbiory.clear();
     }
 
@@ -104,13 +112,5 @@ int main() {
     plik.close();
        
 }
-// Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
-// Debugowanie programu: F5 lub menu Debugowanie > Rozpocznij debugowanie
 
-// Porady dotyczące rozpoczynania pracy:
-//   1. Użyj okna Eksploratora rozwiązań, aby dodać pliki i zarządzać nimi
-//   2. Użyj okna programu Team Explorer, aby nawiązać połączenie z kontrolą źródła
-//   3. Użyj okna Dane wyjściowe, aby sprawdzić dane wyjściowe kompilacji i inne komunikaty
-//   4. Użyj okna Lista błędów, aby zobaczyć błędy
-//   5. Wybierz pozycję Projekt > Dodaj nowy element, aby utworzyć nowe pliki kodu, lub wybierz pozycję Projekt > Dodaj istniejący element, aby dodać istniejące pliku kodu do projektu
-//   6. Aby w przyszłości ponownie otworzyć ten projekt, przejdź do pozycji Plik > Otwórz > Projekt i wybierz plik sln
+

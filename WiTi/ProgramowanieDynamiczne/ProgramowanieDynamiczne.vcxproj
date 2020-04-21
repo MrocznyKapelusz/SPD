@@ -148,9 +148,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PrzegladZupelny.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="witi.data.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrzegladZupelny.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
