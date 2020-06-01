@@ -1,0 +1,5 @@
+﻿  Shrage1.cpp
+D:\Studia\6_SEMESTR\SPD\Lab\Shrage\Shrage1\Shrage1.cpp(30,23): warning C4018: '<': signed/unsigned mismatch
+D:\Studia\6_SEMESTR\SPD\Lab\Shrage\Shrage1\Shrage1.cpp(47,23): warning C4018: '<': signed/unsigned mismatch
+D:\Studia\6_SEMESTR\SPD\Lab\Shrage\Shrage1\Shrage1.cpp(183,35): warning C4018: '<': signed/unsigned mismatch
+  Shrage1.vcxproj -> D:\Studia\6_SEMESTR\SPD\Lab\Shrage\Shrage1\Debug\Shrage1.exe
