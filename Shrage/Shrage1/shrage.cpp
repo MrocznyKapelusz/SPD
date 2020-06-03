@@ -55,24 +55,8 @@ std::vector<Job>& addNewJobWithBiggestQ(std::vector<Job>& jobs, std::vector<int>
             }
         }
     }
-    // trzeba znaleźć index pierwszego zadania którego czas R jest wiekszy od czasTeraz, to będzie tNext
 
 
-
-
-
-
-
-    //--------------------------------------------------------------
-    // znaleźlismy index zadania z największym Q. teraz musimy sprawdzić czy w trakcie czasu P tego zadania 
-    // pojawi się zadanie z wiekszym Q 
-
-    // jeśli pojawi się takie zadanie to wtedy zmniejszamy P pierwszego zadania które się wykonywało, o tyle ile się wykonalo
-    // oraz zwiększamy czasTeraz o tyle ile wykonalo się pierwsze zadanie
-    // i zaczynamy wykonywać to drugie zadanie.
-    // zadanie pierwsze powraca do puli zadań dostępnych.
-
-    // chyba rekurencyjnie to będziez trzeba zrobić 
 
 
     resultJobs.push_back(jobs[biggestQIndex]);

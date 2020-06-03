@@ -12,8 +12,6 @@ int main(int argc, char** argv) {
     std::vector<Job> jobs, result;
     Job tmpJob;
 
-
-
     std::ifstream plik("schr.data.txt");
     int quantityOfData = 0;
 
@@ -51,13 +49,13 @@ int main(int argc, char** argv) {
             jobs.push_back(tmpJob);
         }
 
-        // Posortujmye vector prac po R rosnąco
+        // Sortuj vector prac po R rosnąco
 
         std::sort(jobs.begin(), jobs.end(), [](const Job& first, const Job& second) { return first.R < second.R; });
 
 
         // Pierwsze dostępne zadanie będzie zadaniem o najmniejszym R
-        // Zadanie to będzie dostępne w momencie czasTeraz równym jego R 
+        // dostępne w czasTeraz równym jego R 
         Job jobWithSmallestR = jobs[0];
         int czasTeraz = jobWithSmallestR.R;
 
@@ -70,14 +68,11 @@ int main(int argc, char** argv) {
 
         while (result.size() != iloscZadanPocz) {
 
-            // Z puli zadań wyszukujemy te indexy zadań których R jest mniejsze bądź równe czasTeraz
-            // oraz nie bierzemy pod uwage zadań uprzednio dodanych do kolekcji result
+            //Znajdz indeksy zadan ktorych R jest mniejsze niż czasTeraz i nie były jeszcze dodane
 
             zadaniaDostepne = getIndiciesAvailableJobs(jobs, czasTeraz);
 
-            // W przypadku gdy obecnie nie ma żdanych dostępnych zadań w czasie czasTeraz
-            // To w kolekcji z zadaniami wyszukujemy pierwsze zadanie którego R jest większe od czasTeraz oraz różne od MAX_INT (ponieważ po dodaniu zadania do result, jego wartość R podmieniamy na MAX_INT)
-
+            //Jeśli żadne zadanie nie jest dostępne to 'pójdź' do niego
             if (zadaniaDostepne.size() == 0) {
                 // W tym przypadku znaleźć pierwsze większe R niz czasTeraz z vectora jobs i przypisac je do elapsed time
                 for (int i = 0; i < jobs.size(); i++) {
@@ -121,14 +116,3 @@ int main(int argc, char** argv) {
 
     return 0;
 }
-
-/*
- Zadanie dostępne to zadanie dla którego minął już czas R ale jeszcze nie minął czas P
-t
-tnext
-currentJob
-t=std::min(t+currentJob.P, tnext)
-zmniejszamy currentJob.P o tyle ile sie przesuneliśmy jednostek
-// to obliczamy w przypadku wyzerowania pola P currentJob
-Cmax = std::max(t + currentJob.Q, Cmax)
-*/
